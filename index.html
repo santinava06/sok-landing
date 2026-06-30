@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sok</title>
+  <meta name="description" content="Sok es una app de productividad multi-plataforma que sincroniza tus tareas, proyectos y rutinas entre web, móvil y escritorio. Organiza tu vida con elegancia." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="icon" type="image/png" href="assets/logo.webp" />
+  <link rel="apple-touch-icon" href="assets/logo.webp" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sok — Tu sistema de productividad personal" />
+  <meta property="og:description" content="Organiza tareas, proyectos y rutinas en todos tus dispositivos. Web, móvil y escritorio en perfecta sincronía." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/mockupReal.png" />
+  <meta property="og:image:alt" content="Sok — vista del tablero de tareas" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="assets/mockupReal.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ───────────────── NAV ───────────────── -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" aria-label="Sok inicio">
+        <span class="logo-mark">
+          <img src="assets/soklogov2.jpeg" alt="Sok" class="logo-img" />
+        </span>
+        <span class="logo-text">Sok</span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#features">Funciones</a></li>
+        <li><a href="#platforms">Plataformas</a></li>
+        <li><a href="#changelog">Changelog</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <a href="#download" class="btn btn-sm" id="nav-cta">Descargar</a>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ───────────────── HERO ───────────────── -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-orb hero-orb-1"></div>
+      <div class="hero-orb hero-orb-2"></div>
+      <div class="hero-grid"></div>
+    </div>
+    <div class="container">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Ahora disponible para Windows
+      </div>
+      <h1 class="hero-title">
+        Productividad que<br/>
+        <span class="gradient-text">funciona de verdad</span>
+      </h1>
+      <p class="hero-subtitle">
+        Sok unifica tus tareas, proyectos y rutinas en una sola app.<br/>
+        Web, móvil y escritorio en perfecta sincronía.
+      </p>
+      <div class="hero-actions">
+        <a href="#download" class="btn btn-hero-primary btn-lg" id="hero-cta">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Descargar gratis
+        </a>
+        <a href="#features" class="btn btn-hero-ghost btn-lg">
+          Ver funciones
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+      </div>
+      <div class="hero-meta">
+        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Sin cuenta requerida</span>
+        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 100% gratis</span>
+        <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Actualizaciones automáticas</span>
+      </div>
+    </div>
+    <div class="hero-screenshot">
+      <div class="screenshot-wrapper">
+        <img src="assets/mockupReal.png" alt="Sok app — vista del tablero de tareas" class="screenshot-img" id="hero-screenshot" loading="lazy" />
+        <div class="screenshot-shine"></div>
+      </div>
+    </div>
+    <div class="hero-floor"></div>
+  </section>
+
+  <!-- ───────────────── FEATURES ───────────────── -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Funciones</span>
+        <h2 class="section-title">Todo lo que necesitás, nada que no usás</h2>
+        <p class="section-subtitle">Diseñado para personas que quieren hacer más sin complicarse.</p>
+      </div>
+      <div class="features-grid">
+
+        <div class="feature-card feature-card-large">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          </div>
+          <h3>Gestión de tareas</h3>
+          <p>Creá, organizá y completá tareas con prioridades, fechas límite y etiquetas de colores. Vista lista, kanban o calendario — como prefieras.</p>
+          <div class="feature-visual">
+            <div class="task-demo">
+              <div class="task-item task-done"><span class="task-check">✓</span> Revisar propuesta del cliente</div>
+              <div class="task-item task-active"><span class="task-check task-pending"></span> Preparar presentación</div>
+              <div class="task-item"><span class="task-check task-pending"></span> Enviar informe semanal</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          </div>
+          <h3>Proyectos</h3>
+          <p>Agrupá tareas por proyectos con tableros Kanban y seguimiento de progreso en tiempo real.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Sin distracciones</h3>
+          <p>Interfaz limpia y enfocada. Sin notificaciones molestas, sin funciones que nunca vas a usar.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3>Rutinas y hábitos</h3>
+          <p>Creá rutinas diarias y seguí tu racha. Construí hábitos que duran con recordatorios inteligentes.</p>
+        </div>
+
+        <div class="feature-card feature-card-accent">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3>Sincronización real</h3>
+          <p>Tus datos viajan entre web, móvil y escritorio sin fricción. Empezá en el celular, continuá en la PC.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+          </div>
+          <h3>Vista personalizable</h3>
+          <p>Lista, tablero o calendario. Ordená, filtrá y agrupá tus tareas de la manera que tiene más sentido para vos.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────── PLATFORMS ───────────────── -->
+  <section class="platforms" id="platforms">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Multi-plataforma</span>
+        <h2 class="section-title">Siempre con vos, en cualquier dispositivo</h2>
+      </div>
+      <div class="platforms-grid">
+        <div class="platform-card platform-desktop">
+          <div class="platform-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3>Escritorio</h3>
+          <p>App nativa para Windows con modo offline, atajos de teclado y actualizaciones automáticas.</p>
+          <span class="platform-badge platform-available">Disponible</span>
+        </div>
+        <div class="platform-card">
+          <div class="platform-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </div>
+          <h3>Móvil</h3>
+          <p>App para iOS y Android. Gestioná tus tareas en cualquier lugar con notificaciones push.</p>
+          <span class="platform-badge platform-soon">Próximamente</span>
+        </div>
+        <div class="platform-card">
+          <div class="platform-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <h3>Web</h3>
+          <p>Accedé desde cualquier navegador sin instalar nada. Siempre sincronizado con tus otros dispositivos.</p>
+          <span class="platform-badge platform-soon">Próximamente</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────── DOWNLOAD ───────────────── -->
+  <section class="download" id="download">
+    <div class="container">
+      <div class="download-card">
+        <div class="download-glow"></div>
+        <div class="download-orb"></div>
+        <div class="download-content">
+          <h2>Empezá hoy</h2>
+          <p>Descargá Sok gratis. Sin suscripción, sin tarjeta de crédito.</p>
+          <div class="download-buttons">
+            <a href="#" class="btn btn-primary btn-lg" id="download-windows-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg>
+              Descargar para Windows
+            </a>
+          </div>
+          <div class="download-version" id="version-info">
+            <span class="version-spinner" id="version-spinner"></span>
+            <span id="version-text">Cargando versión...</span>
+          </div>
+          <p class="download-note">Instalador firmado · Actualizaciones automáticas incluidas</p>
+        </div>
+        <div class="download-art">
+          <div class="download-badge-big">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────── CHANGELOG ───────────────── -->
+  <section class="changelog" id="changelog">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Changelog</span>
+        <h2 class="section-title">Historial de versiones</h2>
+        <p class="section-subtitle">Cada actualización, documentada. Sok mejora constantemente.</p>
+      </div>
+      <div class="changelog-list" id="changelog-list">
+        <!-- Skeleton mientras carga -->
+        <div class="changelog-skeleton">
+          <div class="skeleton-item"></div>
+          <div class="skeleton-item"></div>
+          <div class="skeleton-item"></div>
+        </div>
+      </div>
+      <div class="changelog-footer">
+        <a href="https://github.com/santinava06/Sok/releases" target="_blank" rel="noopener" class="btn btn-ghost">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+          Ver todos los releases en GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────── FAQ ───────────────── -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">FAQ</span>
+        <h2 class="section-title">Preguntas frecuentes</h2>
+      </div>
+      <div class="faq-list" id="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" id="faq-q1">
+            ¿Sok es gratis?
+            <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer" id="faq-a1">
+            <p>Sí, Sok es completamente gratuito. No hay suscripciones ni funciones de pago.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" id="faq-q2">
+            ¿Necesito crear una cuenta?
+            <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer" id="faq-a2">
+            <p>Para la versión de escritorio podés empezar sin cuenta. Si querés sincronización entre dispositivos, necesitarás registrarte (también gratis).</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" id="faq-q3">
+            ¿Cómo funcionan las actualizaciones automáticas?
+            <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer" id="faq-a3">
+            <p>Sok verifica automáticamente si hay una nueva versión disponible al iniciar. Si la hay, te pregunta si querés instalarla. El proceso toma menos de un minuto.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" id="faq-q4">
+            ¿En qué plataformas está disponible?
+            <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer" id="faq-a4">
+            <p>Actualmente la app de escritorio está disponible para Windows. Las versiones para móvil (iOS y Android) y web están en desarrollo y estarán disponibles próximamente.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" id="faq-q5">
+            ¿Mis datos son privados?
+            <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer" id="faq-a5">
+            <p>Absolutamente. Tus datos te pertenecen. No los vendemos ni compartimos con terceros. La sincronización está cifrada en tránsito y en reposo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────── FOOTER ───────────────── -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo" aria-label="Sok inicio">
+            <span class="logo-mark">
+              <img src="assets/logo.webp" alt="Sok" class="logo-img" />
+            </span>
+            <span class="logo-text">Sok</span>
+          </a>
+          <p>Tu sistema de productividad personal.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Producto</h4>
+            <a href="#features">Funciones</a>
+            <a href="#platforms">Plataformas</a>
+            <a href="#download">Descargar</a>
+          </div>
+          <div class="footer-col">
+            <h4>Recursos</h4>
+            <a href="#changelog">Changelog</a>
+            <a href="https://github.com/santinava06/Sok/releases" target="_blank" rel="noopener">Releases</a>
+            <a href="https://github.com/santinava06/Sok" target="_blank" rel="noopener">GitHub</a>
+            <a href="#faq">FAQ</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="footer-year"></span> Sok. Santiago Navarro</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
