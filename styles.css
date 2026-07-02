@@ -2,7 +2,6 @@
    SOK LANDING — Design System
    Colores extraídos 1:1 del sistema de la app
    ────────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 /* ── Tokens del design system de la app ── */
 :root {
@@ -49,6 +48,10 @@
 
   /* Hero gradient */
   --hero-gradient: linear-gradient(160deg, #12483c 0%, #1a5c4e 40%, #0f3d32 100%);
+
+  /* Navigation backgrounds */
+  --nav-bg: rgba(246, 246, 243, 0.88);
+  --nav-mobile-bg: rgba(246, 246, 243, 0.97);
 }
 
 /* ── Dark-mode override (tokens del dark mode de la app) ── */
@@ -74,13 +77,121 @@
     --shadow-soft:    0 1px 2px rgba(0,0,0,0.35), 0 8px 28px rgba(0,0,0,0.3);
     --shadow-card:    0 2px 4px rgba(0,0,0,0.4), 0 16px 48px rgba(0,0,0,0.4);
     --hero-gradient:  linear-gradient(160deg, #0b2e26 0%, #12483c 40%, #0a2218 100%);
+    --nav-bg:         rgba(14, 15, 14, 0.88);
+    --nav-mobile-bg:  rgba(14, 15, 14, 0.97);
   }
+}
+
+/* ── Manual Theme Override Class variables ── */
+html.light-theme {
+  --bg:              #f6f6f3;
+  --surface:         #fffefd;
+  --surface-soft:    #f2f2ee;
+  --surface-alt:     #fbfbf8;
+  --surface-strong:  #e9e9e3;
+  --border:          rgba(31, 35, 33, 0.11);
+  --border-muted:    rgba(31, 35, 33, 0.075);
+  --border-strong:   rgba(31, 35, 33, 0.18);
+  --text:            #171918;
+  --text-muted:      #70756f;
+  --text-strong:     #0f1110;
+  --text-faint:      #9aa09a;
+  --cta:             #12483c;
+  --cta-dark:        #0b3028;
+  --cta-hover:       #0e3c31;
+  --cta-soft:        #e4eee9;
+  --accent:          #2a3f39;
+  --ring:            rgba(18, 72, 60, 0.4);
+  --shadow-soft:     0 1px 2px rgba(15,17,16,0.04), 0 8px 28px rgba(15,17,16,0.06);
+  --shadow-card:     0 1px 3px rgba(15,17,16,0.05), 0 16px 48px rgba(15,17,16,0.08);
+  --shadow-elevated: 0 24px 72px rgba(15,17,16,0.14);
+  --hero-gradient:   linear-gradient(160deg, #12483c 0%, #1a5c4e 40%, #0f3d32 100%);
+  --nav-bg:          rgba(246, 246, 243, 0.88);
+  --nav-mobile-bg:   rgba(246, 246, 243, 0.97);
+}
+
+html.dark-theme {
+  --bg:             #0e0f0e;
+  --surface:        rgba(28,30,28,0.94);
+  --surface-soft:   #181a18;
+  --surface-alt:    #1c1e1c;
+  --surface-strong: #252825;
+  --border:         rgba(200,205,200,0.12);
+  --border-muted:   rgba(200,205,200,0.07);
+  --border-strong:  rgba(200,205,200,0.18);
+  --text:           #e0e3e0;
+  --text-muted:     #8a8f8a;
+  --text-strong:    #eef1ee;
+  --text-faint:     #5a5f5a;
+  --cta:            #3cb59a;
+  --cta-dark:       #2d9a80;
+  --cta-hover:      #33a08a;
+  --cta-soft:       #1a3a32;
+  --accent:         #9cc0b4;
+  --shadow-soft:    0 1px 2px rgba(0,0,0,0.35), 0 8px 28px rgba(0,0,0,0.3);
+  --shadow-card:    0 2px 4px rgba(0,0,0,0.4), 0 16px 48px rgba(0,0,0,0.4);
+  --hero-gradient:  linear-gradient(160deg, #0b2e26 0%, #12483c 40%, #0a2218 100%);
+  --nav-bg:         rgba(14, 15, 14, 0.88);
+  --nav-mobile-bg:  rgba(14, 15, 14, 0.97);
 }
 
 /* ─────────────────────────── BASE ─────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar elegante */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 100px;
+  border: 3px solid var(--bg);
+  transition: background var(--transition);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-faint);
+}
+
+/* ── Theme Toggle Button ── */
+.theme-toggle {
+  background: none;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition), color var(--transition);
+  margin-right: 12px;
+}
+.theme-toggle:hover {
+  background: var(--surface-soft);
+  color: var(--cta);
+}
+
+/* Toggle visibility of icons based on theme preferences and overrides */
+.theme-toggle .sun-icon { display: none; }
+.theme-toggle .moon-icon { display: block; }
+
+@media (prefers-color-scheme: dark) {
+  .theme-toggle .sun-icon { display: block; }
+  .theme-toggle .moon-icon { display: none; }
+}
+
+html.dark-theme .theme-toggle .sun-icon { display: block !important; }
+html.dark-theme .theme-toggle .moon-icon { display: none !important; }
+
+html.light-theme .theme-toggle .sun-icon { display: none !important; }
+html.light-theme .theme-toggle .moon-icon { display: block !important; }
 
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -198,15 +309,10 @@ a { color: inherit; }
   transition: background var(--transition), border-color var(--transition), padding var(--transition);
 }
 .nav.scrolled {
-  background: rgba(246,246,243,0.88);
+  background: var(--nav-bg);
   backdrop-filter: blur(20px) saturate(1.4);
   border-bottom: 1px solid var(--border);
   padding: 10px 0;
-}
-@media (prefers-color-scheme: dark) {
-  .nav.scrolled {
-    background: rgba(14,15,14,0.88);
-  }
 }
 .nav-inner {
   display: flex;
@@ -442,9 +548,9 @@ a { color: inherit; }
     0 80px 120px rgba(0,0,0,0.3);
   transform: perspective(1400px) rotateX(3deg);
   transform-origin: bottom center;
-  transition: transform 0.5s ease;
+  transition: transform 0.15s ease-out, box-shadow var(--transition);
+  will-change: transform;
 }
-.screenshot-wrapper:hover { transform: perspective(1400px) rotateX(0deg); }
 .screenshot-img {
   width: 100%;
   display: block;
@@ -455,6 +561,7 @@ a { color: inherit; }
   inset: 0;
   background: linear-gradient(160deg, rgba(255,255,255,0.06) 0%, transparent 45%);
   pointer-events: none;
+  transition: background 0.1s ease-out;
 }
 /* White "floor" that transitions hero → next section */
 .hero-floor {
@@ -854,6 +961,12 @@ a { color: inherit; }
   flex-direction: column;
   gap: 4px;
 }
+.release-notes-container {
+  position: relative;
+  overflow: hidden;
+  max-height: none;
+  transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
 .release-notes-rendered {
   font-size: 0.88rem;
   color: var(--text-muted);
@@ -870,6 +983,50 @@ a { color: inherit; }
   font-family: 'SF Mono', 'Fira Code', monospace;
 }
 
+/* Fade overlay for truncated notes */
+.release-notes-fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 48px;
+  background: linear-gradient(to bottom, transparent, var(--surface));
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.release-notes-container.truncated .release-notes-fade {
+  opacity: 1;
+}
+
+/* Toggle button styling */
+.release-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  color: var(--cta);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  margin-top: 14px;
+  margin-right: 10px;
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.release-toggle-btn:hover {
+  background: var(--cta-soft);
+  border-color: rgba(18, 72, 60, 0.15);
+}
+
+.release-toggle-btn svg {
+  transition: transform 0.3s ease;
+}
+
 /* Download link in card */
 .release-download {
   display: inline-flex;
@@ -880,7 +1037,7 @@ a { color: inherit; }
   font-weight: 600;
   color: var(--cta);
   text-decoration: none;
-  padding: 5px 12px;
+  padding: 6px 14px;
   border-radius: var(--radius-sm);
   background: var(--cta-soft);
   border: 1px solid rgba(18,72,60,0.15);
@@ -985,7 +1142,11 @@ a { color: inherit; }
 .faq-answer {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  visibility: hidden;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.35s ease;
+}
+.faq-item.open .faq-answer {
+  visibility: visible;
 }
 .faq-answer p {
   padding: 0 22px 20px;
@@ -1078,7 +1239,7 @@ a { color: inherit; }
     flex-direction: column;
     position: fixed;
     top: 60px; left: 0; right: 0;
-    background: rgba(246,246,243,0.97);
+    background: var(--nav-mobile-bg);
     backdrop-filter: blur(20px);
     padding: 16px 24px 24px;
     border-bottom: 1px solid var(--border);
@@ -1092,7 +1253,4 @@ a { color: inherit; }
   .download-card { padding: 36px 24px; border-radius: var(--radius-lg); }
   .hero-meta { gap: 12px; }
   .hero-actions { flex-direction: column; align-items: flex-start; }
-}
-@media (prefers-color-scheme: dark) {
-  .nav-links.open { background: rgba(14,15,14,0.97); }
 }

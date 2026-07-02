@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sok</title>
+  <title>Sok — Tu sistema de productividad personal</title>
   <meta name="description" content="Sok es una app de productividad multi-plataforma que sincroniza tus tareas, proyectos y rutinas entre web, móvil y escritorio. Organiza tu vida con elegancia." />
 
   <!-- Favicon -->
@@ -20,10 +20,25 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="assets/mockupReal.png" />
 
+  <!-- Preload LCP Hero Image -->
+  <link rel="preload" as="image" href="assets/mockupReal.png" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Theme Toggle Script (Avoids Flash of Unstyled Content) -->
+  <script>
+    (function() {
+      const theme = localStorage.getItem('theme');
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark-theme');
+      } else if (theme === 'light') {
+        document.documentElement.classList.add('light-theme');
+      }
+    })();
+  </script>
 </head>
 <body>
 
@@ -32,7 +47,7 @@
     <div class="nav-inner">
       <a href="#" class="nav-logo" aria-label="Sok inicio">
         <span class="logo-mark">
-          <img src="assets/soklogov2.jpeg" alt="Sok" class="logo-img" />
+          <img src="assets/soklogov2.jpeg" alt="" class="logo-img" aria-hidden="true" />
         </span>
         <span class="logo-text">Sok</span>
       </a>
@@ -42,7 +57,11 @@
         <li><a href="#changelog">Changelog</a></li>
         <li><a href="#faq">FAQ</a></li>
       </ul>
-      <a href="#download" class="btn btn-sm" id="nav-cta">Descargar</a>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
+        <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <a href="#download" class="btn btn-sm btn-outline" id="nav-cta">Descargar</a>
       <button class="nav-hamburger" id="nav-hamburger" aria-label="Menú" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -87,7 +106,7 @@
     </div>
     <div class="hero-screenshot">
       <div class="screenshot-wrapper">
-        <img src="assets/mockupReal.png" alt="Sok app — vista del tablero de tareas" class="screenshot-img" id="hero-screenshot" loading="lazy" />
+        <img src="assets/mockupReal.png" alt="Sok app — vista del tablero de tareas" class="screenshot-img" id="hero-screenshot" loading="eager" />
         <div class="screenshot-shine"></div>
       </div>
     </div>
@@ -263,47 +282,47 @@
       </div>
       <div class="faq-list" id="faq-list">
         <div class="faq-item">
-          <button class="faq-question" aria-expanded="false" id="faq-q1">
+          <button class="faq-question" aria-expanded="false" id="faq-q1" aria-controls="faq-a1">
             ¿Sok es gratis?
-            <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
-          <div class="faq-answer" id="faq-a1">
+          <div class="faq-answer" id="faq-a1" aria-labelledby="faq-q1" role="region" aria-hidden="true">
             <p>Sí, Sok es completamente gratuito. No hay suscripciones ni funciones de pago.</p>
           </div>
         </div>
         <div class="faq-item">
-          <button class="faq-question" aria-expanded="false" id="faq-q2">
+          <button class="faq-question" aria-expanded="false" id="faq-q2" aria-controls="faq-a2">
             ¿Necesito crear una cuenta?
-            <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
-          <div class="faq-answer" id="faq-a2">
+          <div class="faq-answer" id="faq-a2" aria-labelledby="faq-q2" role="region" aria-hidden="true">
             <p>Para la versión de escritorio podés empezar sin cuenta. Si querés sincronización entre dispositivos, necesitarás registrarte (también gratis).</p>
           </div>
         </div>
         <div class="faq-item">
-          <button class="faq-question" aria-expanded="false" id="faq-q3">
+          <button class="faq-question" aria-expanded="false" id="faq-q3" aria-controls="faq-a3">
             ¿Cómo funcionan las actualizaciones automáticas?
-            <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
-          <div class="faq-answer" id="faq-a3">
+          <div class="faq-answer" id="faq-a3" aria-labelledby="faq-q3" role="region" aria-hidden="true">
             <p>Sok verifica automáticamente si hay una nueva versión disponible al iniciar. Si la hay, te pregunta si querés instalarla. El proceso toma menos de un minuto.</p>
           </div>
         </div>
         <div class="faq-item">
-          <button class="faq-question" aria-expanded="false" id="faq-q4">
+          <button class="faq-question" aria-expanded="false" id="faq-q4" aria-controls="faq-a4">
             ¿En qué plataformas está disponible?
-            <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
-          <div class="faq-answer" id="faq-a4">
+          <div class="faq-answer" id="faq-a4" aria-labelledby="faq-q4" role="region" aria-hidden="true">
             <p>Actualmente la app de escritorio está disponible para Windows. Las versiones para móvil (iOS y Android) y web están en desarrollo y estarán disponibles próximamente.</p>
           </div>
         </div>
         <div class="faq-item">
-          <button class="faq-question" aria-expanded="false" id="faq-q5">
+          <button class="faq-question" aria-expanded="false" id="faq-q5" aria-controls="faq-a5">
             ¿Mis datos son privados?
-            <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            <svg class="faq-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
           </button>
-          <div class="faq-answer" id="faq-a5">
+          <div class="faq-answer" id="faq-a5" aria-labelledby="faq-q5" role="region" aria-hidden="true">
             <p>Absolutamente. Tus datos te pertenecen. No los vendemos ni compartimos con terceros. La sincronización está cifrada en tránsito y en reposo.</p>
           </div>
         </div>
@@ -318,7 +337,7 @@
         <div class="footer-brand">
           <a href="#" class="nav-logo" aria-label="Sok inicio">
             <span class="logo-mark">
-              <img src="assets/logo.webp" alt="Sok" class="logo-img" />
+              <img src="assets/logo.webp" alt="" class="logo-img" aria-hidden="true" />
             </span>
             <span class="logo-text">Sok</span>
           </a>
