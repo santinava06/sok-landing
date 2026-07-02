@@ -8,7 +8,7 @@
    - Scroll reveal animations
 ───────────────────────────────────────── */
 
-const GITHUB_REPO = 'santinava06/Sok';
+const GITHUB_REPO = 'santinava06/sok-releases';
 const GITHUB_API  = `https://api.github.com/repos/${GITHUB_REPO}`;
 
 /* ── Nav scroll ── */
